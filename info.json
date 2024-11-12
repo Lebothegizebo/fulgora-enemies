@@ -1,13 +1,13 @@
 {
   "name": "fulgora-enemies",
   "version": "0.1.0",
-  "title": "Fulgorain-Enemies",
+  "title": "Fulgorain Enemies",
   "author": "Lebothegizebo",
-  "description": "Adds aggresive Fulgorain enemies to the game",
+  "description": "Adds aggresive Fulgorain enemies to the game. Requires Space Age.",
   "dependencies": 
 [
 "base >= 2.0",
-"space-age >= 2.0",
+"space-age >= 2.0"
 ],
   "factorio_version": "2.0"
 }
