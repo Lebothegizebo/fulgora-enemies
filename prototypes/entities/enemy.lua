@@ -38,36 +38,31 @@ data.extend{
             max_sounds_per_type = 3
         },
         healing_per_tick = 0.02,
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        selection_box = {{-3, -3}, {3, 3}},
         absorptions_per_second = { pollution = { absolute = 20, proportional = 0.01 } },
         dying_explosion = "biter-spawner-die",
         max_count_of_owned_units = 7,
         max_friends_around_to_spawn = 5,
-        collision_box = {{-6.88, -4}, {6.88, 4}},
+        collision_box = {{-3, -3}, {3, 3}},
         map_generator_bounding_box = {{-6.88, -4}, {6.88, 4}},
         autoplace = fulgora_enemy_spawner_autoplace("(min(fulgora_spots, (1 - fulgora_starting_vault_cone) / 4) < 0.10) * min(fulgora_vaults_and_starting_vault, 1 - fulgora_starting_mask*2)"),
         graphics_set =
         {
             animations =
             {
-                filename = "__fulgora-enemies__/graphics/entity/robot-spawner.png",
-                line_length = 1,
-                width = 128,
-                height = 128,
+                filename = "__space-age__/graphics/decorative/fulgoran-ruin/fulgoran-ruin-huge-tall.png",
                 frame_count = 1,
-                direction_count = 1,
-                scale = 0.2
+                width = 768,
+                height = 640,
+                shift = util.by_pixel( 138/2, -139.5/2),
+                line_length = 3,
+                scale = 0.5
             },
         },
         result_units = (function()
                         local res = {}
                         res[1] = {"small-biter", {{0.0, 0.3}, {0.6, 0.0}}}
-
-                        -- from evolution_factor 0.3 the weight for medium-biter is linearly rising from 0 to 0.3
-                        -- this means for example that when the evolution_factor is 0.45 the probability of spawning
-                        -- a small biter is 66% while probability for medium biter is 33%.
                         res[2] = {"medium-biter", {{0.2, 0.0}, {0.6, 0.3}, {0.7, 0.1}}}
-                        -- for evolution factor of 1 the spawning probabilities are: small-biter 0%, medium-biter 1/8, big-biter 4/8, behemoth biter 3/8
                         res[3] = {"behemoth-biter", {{0.9, 0.0}, {1.0, 0.3}}}
                         return res
                         end)(),
